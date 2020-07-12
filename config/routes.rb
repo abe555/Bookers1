@@ -1,12 +1,19 @@
 Rails.application.routes.draw do
 # Topページのアクション
   get '/' => 'books#top'
+
 # 投稿一覧と新規投稿のアクション
   get 'books' => 'books#index'
 
   post 'books' => 'books#create'
 
+  get 'books/:id' => 'books#show', as: 'book'
 
+  get 'books/:id/edit' => 'books#edit', as: 'edit_book'
+
+  patch 'books/:id' => 'books#update', as: 'update_book'
+
+  delete 'books/:id' => 'books#destroy', as: 'destroy_book'
 
   get 'books/show'
   get 'books/edit'
