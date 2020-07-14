@@ -1,6 +1,6 @@
 Rails.application.routes.draw do
 # Topページのアクション
-  get '/' => 'books#top'
+  root :to => 'books#top'
 
 # 投稿一覧と新規投稿のアクション
   get 'books' => 'books#index'

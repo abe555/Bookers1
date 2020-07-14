@@ -14,6 +14,7 @@ class BooksController < ApplicationController
   		flash[:notice] = "Book was successfully updated!"
   		redirect_to book_path(@book.id)
   	else
+  		flash[:notice] = "error! Fill in the blank!"
   		render :index
   	end
 
@@ -34,7 +35,7 @@ class BooksController < ApplicationController
   		flash[:notice] = "Book was successfully updated!"
   		redirect_to book_path(@book.id)
   	else
-  		flash[:notice] = "Error! Fill in the blank!"
+  		flash[:notice] = "error! Fill in the blank!"
   		render :show
   	end
   end
